@@ -16,7 +16,32 @@ class ArtistsController < ApplicationController
   def create
     #@artist = Artist.new
     # artist = Artist.new
-    Artist.create( params[:artist] )
+    @artist = Artist.new( params[:artist] )
+    if @artist.save
+      redirect_to artists_path
+    else
+      render :action => "new"
+    end
+  end
+
+  def edit
+    @artist = Artist.find( params[:id] )
+  end
+
+  def update
+    @artist = Artist.find( params[:id] )  
+    if @artist.update_attributes( params[:artist] )
+      redirect_to artists_path
+    else
+      render :action => "edit"
+    end
+  end
+
+  def destroy
+    # warning! there is no identity check here or anything
+    @artist = Artist.find( params[:id] )
+    Artist.delete( @artist )
     redirect_to artists_path
   end
+
 end
