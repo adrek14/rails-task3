@@ -4,7 +4,6 @@
 
 - @artist.albums.each do |alb|
   %p{ :style => "display: inline;" }= alb.name + " - " + alb.year.to_s 
-  %p{ :style => "display: inline; font-size: 10px;" }= link_to "(usuń)", artist_album_path( @artist, alb ), :confirm => "Jestes pewien?", :method => :delete
   %p
 
 %p= link_to "(+) Dodaj album", new_artist_album_path( @artist )

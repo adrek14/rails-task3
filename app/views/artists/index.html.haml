@@ -8,9 +8,11 @@
         %td
           %b= link_to a.name, a
           %p{ :style => "display: inline; font-size: 10px;" }= link_to "(edit)", edit_artist_path( a )
-          %p{ :style => "display: inline; font-size: 10px;" }= link_to "(usuń)", artist_path( a ), :confirm => "Jestes pewien?", :method => :delete
           %p= a.genre
 - else
   %p Brak artystow w bazie!
 %p
 %p= link_to "(+) Dodaj wykonawcę", new_artist_path
+%p
+%hr
+%p= link_to "interface admina >>", admin_artists_path

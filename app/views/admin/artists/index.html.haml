@@ -1,0 +1,19 @@
+%h1 Rock 'n Roll Hall of Fame
+%p
+- if @artists != nil
+  %table
+    %tr
+    - @artists.each do |a|
+      %tr
+        %td
+          %b= link_to a.name, admin_artist_path( a )
+          %p{ :style => "display: inline; font-size: 10px;" }= link_to "(edit)", edit_admin_artist_path( a )
+          %p{ :style => "display: inline; font-size: 10px;" }= link_to "(usuń)", admin_artist_path( a ), :confirm => "Jestes pewien?", :method => :delete
+          %p= a.genre
+- else
+  %p Brak artystow w bazie!
+%p
+%p= link_to "(+) Dodaj wykonawcę", new_admin_artist_path
+%p
+%hr
+%p= link_to "<< interface użytkownika", artists_path

@@ -1,0 +1,12 @@
+
+%h2= @artist.name
+%h3= @artist.genre
+
+- @artist.albums.each do |alb|
+  %p{ :style => "display: inline;" }= alb.name + " - " + alb.year.to_s 
+  %p{ :style => "display: inline; font-size: 10px;" }= link_to "(usuń)", admin_artist_album_path( @artist, alb ), :confirm => "Jestes pewien?", :method => :delete
+  %p
+
+%p= link_to "(+) Dodaj album", new_admin_artist_album_path( @artist )
+%p
+%p= link_to "<< Wstecz", admin_artists_path

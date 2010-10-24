@@ -1,0 +1,8 @@
+
+  
+- form_for [:admin, @artist] do |f|
+  = render "shared/error_messages", :target => @artist
+  = render :partial => "form", :locals => {:f => f}
+  %p= f.submit "Zapisz zmiany" 
+  %p
+  %p= link_to "(x) Usuń", admin_artist_path(@artist), :confirm => "Jestes pewien?", :method => :delete

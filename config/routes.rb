@@ -7,6 +7,15 @@ RailsTask3::Application.routes.draw do
   end
 
   resources :albums
+
+  namespace :admin do
+    root :to => "artists#index"
+    
+    resources :artists do
+      resources :albums
+    end
+    resources :albums
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
