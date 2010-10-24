@@ -1,4 +1,6 @@
 - form_for [@album.artist, @album] do |f|
+  %p= f.label :artist_id, "Wykonawca"
+  %p= f.select :artist_id, ( Artist.all.collect { |a| [a.name, a.id] } ), :required => true, :value => @album.artist
   %p= f.label :name, "Nazwa"
   %p= f.text_field :name
   %p= f.label :year, "Rok (yyyy)"
