@@ -11,7 +11,7 @@ class Admin::ArtistsController < ApplicationController
   
   def new
     # why oh why Admin:: works???????
-    @artist = Admin::Artist.new
+    @artist = Artist.new
   end
 
   def create

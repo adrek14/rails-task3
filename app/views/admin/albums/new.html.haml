@@ -1,5 +1,5 @@
 - #:url => admin_artist_album_path
-- form_for [ :admin, @album.artist, @album ] do |f|
+- form_for [:admin, @album.artist, @album] do |f|
 
   = render "shared/error_messages", :target => @album
   %p= f.label :artist_id, "Wykonawca"
