@@ -11,13 +11,14 @@ class Admin::ArtistsController < ApplicationController
   
   def new
     # why oh why Admin:: works???????
+    # got rid of Admin::, still works and so does heroku... ????
     @artist = Artist.new
   end
 
   def create
     #@artist = Artist.new
     # artist = Artist.new
-    @artist = Admin::Artist.new( params[:artist] )
+    @artist = Artist.new( params[:artist] )
     if @artist.save
       redirect_to admin_artists_path
     else

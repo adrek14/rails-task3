@@ -8,11 +8,11 @@ class Admin::AlbumsController < ApplicationController
   end
 
   def new
-    @album = Admin::Artist.find(params[:artist_id]).albums.new
+    @album = Artist.find(params[:artist_id]).albums.new
   end
 
   def create
-    @artist = Admin::Artist.find( params[:artist_id] )
+    @artist = Artist.find( params[:artist_id] )
     @album = @artist.albums.new( params[:album] )
     if @album.save
       redirect_to admin_artist_path( @artist )
