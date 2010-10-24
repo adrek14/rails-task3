@@ -1,4 +1,5 @@
 - form_for [@album.artist, @album] do |f|
+  = render "shared/error_messages", :target => @album
   %p= f.label :artist_id, "Wykonawca"
   %p= f.select :artist_id, ( Artist.all.collect { |a| [a.name, a.id] } ), :required => true, :value => @album.artist
   %p= f.label :name, "Nazwa"

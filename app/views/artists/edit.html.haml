@@ -1,7 +1,7 @@
 
   
 - form_for @artist do |f|
-  = render "error_messages", :target => @artist
+  = render "shared/error_messages", :target => @artist
   = render :partial => "form", :locals => {:f => f}
   %p= f.submit "Zapisz zmiany" 
   %p
