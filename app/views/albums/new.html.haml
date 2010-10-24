@@ -1,0 +1,6 @@
+- form_for [@album.artist, @album] do |f|
+  %p= f.label :name, "Nazwa"
+  %p= f.text_field :name
+  %p= f.label :year, "Rok (yyyy)"
+  %p= f.text_field :year
+  %p= f.submit "Dodaj"

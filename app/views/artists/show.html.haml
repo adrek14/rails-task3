@@ -1,0 +1,10 @@
+
+%h2= @artist.name
+%h3= @artist.genre
+
+- @artist.albums.each do |alb|
+  %p= alb.name + " - " + alb.year.to_s
+
+%p= link_to "(+) Dodaj album", new_artist_album_path( @artist )
+%p
+%p= link_to "<< Wstecz", artists_path

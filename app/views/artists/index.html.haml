@@ -1,0 +1,13 @@
+
+- if @artists != nil
+  %table
+    %tr
+    - @artists.each do |a|
+      %tr
+        %td
+          %b= link_to a.name, a
+          %p= a.genre
+- else
+  %p Brak artystow w bazie!
+%p
+%p= link_to "(+) Dodaj wykonawcę", new_artist_path
